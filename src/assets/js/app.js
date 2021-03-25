@@ -35,7 +35,18 @@ const renderContacts = () => {
 document.addEventListener('DOMContentLoaded', () => {
 	renderContacts()
 	const contactForm = document.getElementById('newContactForm')
-	
+	const toggleFormVisibilityButton = document.getElementById('addContact')
+	contactForm.style.display = 'none'
+
+	// Hide and show new contact form on Add Contact button click
+	toggleFormVisibilityButton.addEventListener('click', () => {
+		if (contactForm.style.display === '') {
+			contactForm.style.display = 'none'
+		} else {
+			contactForm.style.display = ''
+		}
+	})
+
 	// Button click event handler
 	contactForm.addEventListener('submit', event => {
 		event.preventDefault()
@@ -65,5 +76,3 @@ document.addEventListener('DOMContentLoaded', () => {
 		contactForm.reset()
 	})
 })
-
-
