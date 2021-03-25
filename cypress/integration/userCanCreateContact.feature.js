@@ -9,6 +9,13 @@ describe("user can create a contact", () => {
         cy.get('#email').type('vsevolod.deriushkin@gmail.com')
         cy.get('#mobilePhone').type('0701234567')
         cy.get('#notes').type('cool dude')
-        cy.get('#add').click()
+        cy.get('#submit').click()
+    }),
+    it('checks the contact list', () => {
+        cy.get('#contactList').should('contain','Seva')
+        cy.get('#contactList').should('contain','Deriushkin')
+        cy.get('#contactList').should('contain','vsevolod.deriushkin@gmail.com')
+        cy.get('#contactList').should('contain','0701234567')
+        cy.get('#contactList').should('contain','cool dude')
     })
 })
