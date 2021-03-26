@@ -2,6 +2,7 @@ describe("user can create a contact", () => {
     beforeEach("checks if user can access Address Book", () => {
         cy.visit('/')
         cy.get('h1').should('contain.text', 'Address Book')
+        cy.get('#addContact').click()
     }),
     beforeEach('checks for necessary entries', () => {
         cy.get('#firstName').type('Seva')
